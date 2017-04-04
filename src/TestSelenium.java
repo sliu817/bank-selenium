@@ -11,12 +11,16 @@ public class TestSelenium {
 
         System.setProperty("webdriver.firefox.marionette","geckodriver.exe" );
         WebDriver driver = new FirefoxDriver();
+        String baseUrl = "http://demo.guru99.com/v4/";
 
-        driver.get("http://demo.guru99.com/");
-        WebElement element = driver.findElement(By.xpath("//input[@name='emailid']"));
-        element.sendKeys("liusha2046@gmail.com");
-        WebElement button = driver.findElement(By.xpath("//input[@name='btnLogin']"));
-        button.click();
+        driver.get(baseUrl);
+        WebElement element = driver.findElement(By.name("uid"));
+        element.sendKeys("mngr73124");
+        WebElement password = driver.findElement(By.name("password"));
+        password.sendKeys("adArUmY");
+
+        driver.findElement(By.name("btnLogin")).click();
+
 
        // driver.close();
         //System.exit(0);
