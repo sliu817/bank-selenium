@@ -6,7 +6,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.io.File;
 
-public class TestSelenium {
+public class TestScript1 {
     public static void main(String[] args) {
 
         System.setProperty("webdriver.firefox.marionette","geckodriver.exe" );
@@ -24,5 +24,14 @@ public class TestSelenium {
 
        // driver.close();
         //System.exit(0);
+
+        String exptectedTitle = "Guru99 Bank Manager HomePage";
+        String actualTitle = driver.getTitle();
+
+        if (actualTitle.contentEquals(exptectedTitle)) {
+            System.out.println("Test passed");
+        } else {
+            System.out.println("Test Failed");
+        }
     }
 }
